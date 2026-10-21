@@ -10,6 +10,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 <style>
+/* mobile stabilization: one width math for everything, no sideways slide */
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:hidden}
+@supports (overflow-x:clip){html,body{overflow-x:clip}}
+body{overscroll-behavior-x:none}
+img,video{max-width:100%}
 :root{
   --green:#7bc442; --green-dark:#63a834; --ink:#383838; --ink2:#2e2e2e; --panel:#444444;
   --paper:#ffffff; --txt:#f4f4f4; --muted:#cfcfcf; --footer:#141414;
