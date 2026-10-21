@@ -530,7 +530,7 @@ function sendForm(data,msgEl,formEl){
 document.getElementById('quoteForm').addEventListener('submit',function(e){
   e.preventDefault();var f=e.target;
   if(!f.first_name.value||!f.last_name.value||!f.email.value||!f.message.value){var m=document.getElementById('quoteMsg');m.className='form-msg err';m.textContent='Please fill in your name, email, and a short message.';return;}
-  sendForm({name:f.first_name.value+' '+f.last_name.value,first_name:f.first_name.value,last_name:f.last_name.value,phone:f.phone.value,email:f.email.value,_replyto:f.email.value,message:f.message.value,_subject:'New quote request from blakebuiltinc.com',_template:'table',_captcha:'false',_honey:f._honey.value},document.getElementById('quoteMsg'),f);
+  sendForm({name:f.first_name.value+' '+f.last_name.value,first_name:f.first_name.value,last_name:f.last_name.value,phone:f.phone.value,email:f.email.value,_replyto:f.email.value,message:f.message.value,project_details:f.message.value,customer_details:'CUSTOMER DETAILS\nName: '+f.first_name.value+' '+f.last_name.value+'\nPhone: '+(f.phone.value||'(not given)')+'\nEmail: '+f.email.value+'\nMessage: '+f.message.value,_subject:'New quote request from blakebuiltinc.com',_template:'table',_captcha:'false',_honey:f._honey.value},document.getElementById('quoteMsg'),f);
 });
 
 /* chat box */
@@ -539,7 +539,7 @@ document.getElementById('chatBtn').addEventListener('click',function(){panel.cla
 document.getElementById('chatForm').addEventListener('submit',function(e){
   e.preventDefault();var f=e.target;
   if(!f.name.value||!f.contact.value||!f.message.value){var m=document.getElementById('chatMsg');m.className='form-msg err';m.textContent='Add your name, a phone or email, and your message.';return;}
-  sendForm({name:f.name.value,contact:f.contact.value,message:f.message.value,_subject:'New chat message from blakebuiltinc.com',_template:'table',_captcha:'false',_honey:f._honey.value},document.getElementById('chatMsg'),f);
+  sendForm({name:f.name.value,contact:f.contact.value,message:f.message.value,customer_details:'CUSTOMER DETAILS\nName: '+f.name.value+'\nContact: '+f.contact.value+'\nMessage: '+f.message.value,_subject:'New chat message from blakebuiltinc.com',_template:'table',_captcha:'false',_honey:f._honey.value},document.getElementById('chatMsg'),f);
 });
 </script>
 <script>
